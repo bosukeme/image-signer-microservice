@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: ConfigMap
+metadata:
+  name: node-server-cm
+  labels:
+    app: node-server
+data:
+  QUEUE_NAME: sign
+  PORT: "4000"
+  RABBITMQURL: amqp://rabbitmq:5672

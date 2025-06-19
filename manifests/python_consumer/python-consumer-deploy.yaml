@@ -1,0 +1,40 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: python-consumer-deploy
+  labels:
+    app: python-consumer
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: python-consumer
+  template:
+    metadata:
+      labels:
+        app: python-consumer
+    spec:
+      containers:
+      - name: python-consumer
+        image: bosukeme/image-signer-python-consumer:latest
+        imagePullPolicy: Always
+        resources:
+          requests:
+            memory: "500Mi"
+            cpu: "1000m"
+          limits:
+            memory: "500Mi"
+            cpu: "1000m"
+        # ports:
+        # - containerPort: 5000
+        #   protocol: TCP
+        # readinessProbe:
+        #   httpGet:
+        #     path: /ping
+        #     port: 5000
+        securityContext:
+          allowPrivilegeEscalation: false 
+          privileged: false
+      securityContext:
+        seccompProfile:
+          type: RuntimeDefault

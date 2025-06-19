@@ -1,0 +1,45 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: node-server-deploy
+  labels:
+    app: node-server
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: node-server
+  template:
+    metadata:
+      labels:
+        app: node-server
+    spec:
+      containers:
+      - name: node-server
+        image: bosukeme/image-signer-node-server:latest
+        imagePullPolicy: Always        
+        resources:
+          requests:
+            memory: "500Mi"
+            cpu: "1000m"
+          limits:
+            memory: "500Mi"
+            cpu: "1000m"
+        ports:
+        - containerPort: 4000
+          protocol: TCP 
+        readinessProbe:
+          httpGet:
+            path: /
+            port: 4000
+        envFrom:
+          - configMapRef:
+              name: node-server-cm
+          - secretRef:
+              name: node-server-secret
+        securityContext:
+          allowPrivilegeEscalation: false
+          privileged: false
+      securityContext:
+        seccompProfile:
+          type: RuntimeDefault

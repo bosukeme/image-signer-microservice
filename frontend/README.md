@@ -20,10 +20,9 @@ This frontend is built for simplicity and responsiveness, ensuring a smooth user
 
 * TypeScript – Provides static typing for better development and maintainability.
 
-* Tailwind CSS (if used) – Utility-first CSS framework for styling (optional).
+* Tailwind CSS – Utility-first CSS framework for styling.
 
 * Fetch API – For sending HTTP requests to the backend API.
-
 
 
 ## Docker SetUp

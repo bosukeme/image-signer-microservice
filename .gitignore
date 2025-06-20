@@ -49,4 +49,7 @@ venv/
 
 *secret*
 
-*docker-compose.yml
+rabbitMQ/docker-compose.yml
+
+.pptx
+Presentation1.pptx

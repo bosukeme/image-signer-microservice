@@ -93,6 +93,8 @@ A Secret is similar to a ConfigMap but designed to hold sensitive data like pass
     $ kubectl create secret generic frontend-secret --from-env-file=.env --dry-run=client -o yaml > frontend-secret.yaml
     ```
 
+    Edit the deployment yaml file (frontend-deploy.yaml) and update the image name with the image you created <a href="https://github.com/bosukeme/image-signer-microservice/tree/main/frontend">here </a>
+
     ```
     $ kubectl apply -f .
     ```
@@ -125,7 +127,7 @@ A Secret is similar to a ConfigMap but designed to hold sensitive data like pass
     $ kubectl create secret generic node-server --from-env-file=.env --dry-run=client -o yaml > node-server-secret.yaml
     ```
 
-    Then...
+    Edit the deployment yaml file (node-server-deploy.yaml) and update the image name with the image you created <a href="https://github.com/bosukeme/image-signer-microservice/tree/main/node_server">here </a>
 
     ```
     $ kubectl apply -f .
@@ -172,7 +174,7 @@ A Secret is similar to a ConfigMap but designed to hold sensitive data like pass
     $ kubectl create secret generic python-consumer --from-env-file=.env --dry-run=client -o yaml > python-consumer-secret.yaml
     ```
 
-    Then...
+    Edit the deployment yaml file (python-consumer-deploy.yaml) and update the image name with the image you created <a href="https://github.com/bosukeme/image-signer-microservice/tree/main/python_consumer">here </a>
 
     ```
     $ kubectl apply -f .

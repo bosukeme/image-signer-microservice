@@ -47,6 +47,9 @@ A Secret is similar to a ConfigMap but designed to hold sensitive data like pass
 - python
 - nodejs
 
+<br/>
+    <img src="./assets/capture-image-signer.png" alt="image signer architecture" width="700px">
+
 ## Setup Instructions
 
 1.  Clone the repository:
